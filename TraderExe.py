@@ -105,11 +105,11 @@ def trading_strategy_with_atr(df, rsi_period=14, stochastic_period=5, macd_param
     return df
 
 
-def add_trailing_stop(df, atr_period=7, atr_multiplier=1.0):
+def add_trailing_stop(df, atr_period=14, atr_multiplier=1.0):
     df['Trailing_Stop_Buy'] = df['high'] - (df['ATR'] * atr_multiplier)
     df['Trailing_Stop_Sell'] = df['low'] + (df['ATR'] * atr_multiplier)
     return df
-def add_atr_bands(df, atr_period=7, atr_multiplier=1.5):
+def add_atr_bands(df, atr_period=14, atr_multiplier=1.5):
     df['ATR_Upper_Band'] = df['close'] + (atr_multiplier * df['ATR'])
     df['ATR_Lower_Band'] = df['close'] - (atr_multiplier * df['ATR'])
     return df

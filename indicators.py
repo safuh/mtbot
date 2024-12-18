@@ -61,7 +61,7 @@ def calculate_fibonacci_tp(df, last_price, signal):
         raise ValueError("Invalid signal: must be 1 (buy) or -1 (sell).")
 
     return tp_price
-def calculate_atr(df, period=9):
+def calculate_atr(df, period=14):
     """
     Calculates the Average True Range (ATR) indicator.
 
